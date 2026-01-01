@@ -9,7 +9,7 @@ int main(){
     }
     for(int i=2;i*i<=200;i++){
         for(int j=i*i;j<=200;j+=i){
-            spf[j]=i;
+            if(spf[j]==j)spf[j]=i;
         }
     } // nlog(logn) precomputation
     vector<int>prime;
