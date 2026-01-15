@@ -5,28 +5,19 @@ int main(){
 
     int t;cin>>t;
     while(t--){
-        int s,k,m;
+        long long  s,k,m;
         cin>>s>>k>>m;
-        if(s==k){
-            if(m%k==0){
-                cout<<s<<endl;
+        long long rem = m%k;
+        if(s>=k){
+            if((m/k)%2==0){
+                cout<<s-(rem)<<endl;
+                continue;
+            }else{
+                cout<<k-rem<<endl;
                 continue;
             }
-            cout<<(s%k)<<endl;
-        }
-        if(s>k){
-            if(k>m){
-                cout<<0<<endl;
-                continue;
-            }
-            if(m%k==0){
-                cout<<k<<endl;
-                continue;
-            }
-            cout<<m%k<<endl;
-        }   
-        if(s<k){
-            
+        }else{
+            cout<<s-min(rem,s)<<endl;
         }
     }
 

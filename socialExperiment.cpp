@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <map>
 using namespace std;
 
 int main(){
@@ -10,20 +12,11 @@ int main(){
             cout<<n<<endl;
             continue;
         }
-        if(n%2==0 || n%3==0){
+        if(n%2==0){
             cout<<0<<endl;
             continue;
         }
-        if(n%3==1){
-            cout<<3<<endl;
-            continue;
-        }
-        if(n%2==1){
-            cout<<1<<endl;
-            continue;
-        }
+        cout<<1<<endl;
     }
-
-
     return 0;
 }
