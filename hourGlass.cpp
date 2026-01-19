@@ -18,8 +18,8 @@ int main(){
             }
         }else{
             cout<<s-min(rem,s)<<endl;
+            continue;
         }
     }
-
     return 0;
 }
