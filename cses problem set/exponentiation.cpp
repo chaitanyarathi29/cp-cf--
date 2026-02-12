@@ -28,3 +28,14 @@ int main(){
     }
     return 0;
 }
+
+
+//can create iterative function where on odd
+
+/*
+while(b){
+    int temp=1;
+    
+}
+
+*/
