@@ -14,7 +14,7 @@ int main(){
 
     /*inbuilt function
     int index = lower_bound(v.begin(),v.end(),target); -> returns index if not there returns size ie last index+1
-    returns first element that is not less than target(either equal or greater)
+    returns first element that is NOT less than target(either equal or greater)
     int index = upper_bound(v.begin(),v.end(),target); -> returns index if not there returns size ie last index+1
     returns just first greater than target value
     */
@@ -23,8 +23,7 @@ int main(){
         if(v[mid]==target){
             cout<<"Yes"<<endl;
             return 0;
-        }
-        else{
+        }else{
             if(v[mid]>target){
                 ei=mid-1;
             }else{
