@@ -11,6 +11,7 @@ int main(){
         int n,k;
         cin>>n>>k;
         vector<int>v(n,0);
+        
         for(auto&it:v){
             cin>>it;
         }
