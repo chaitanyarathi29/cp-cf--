@@ -29,7 +29,7 @@ int main(){
     cout<<d.front().second+1<<" ";
 
     for(int i=k;i<n;i++){
-
+        
         if(!d.empty() && d.front().second < i-k+1){
             d.pop_front();
         }
