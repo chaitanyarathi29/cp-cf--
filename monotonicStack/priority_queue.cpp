@@ -3,6 +3,7 @@
 #include <queue>
 using namespace std;
 //custom comparator
+//should b come before a if true the yes else no.. 
 //in case of pq -> if true then second is given priority
 //in case of vector -> if true first is given priority
 struct custom_compare{
