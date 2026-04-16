@@ -12,20 +12,7 @@ int main(){
         cin>>it;
     }    
     sort(v.begin(),v.end());
-    int c=0;
-    for(int i=0;i<n-1;i+=2){
-        swap(v[i],v[i+1]);
-        c++;
-    }
-    if(n&1){
-        cout<<c<<endl;
-    }
-    else{
-        cout<<c-1<<endl;
-    }
-    for(int i=0;i<n;i++){
-        cout<<v[i]<<" ";
-    }
+    
 
     return 0;
 }
