@@ -12,7 +12,8 @@ int main(){
             a+=(1<<i);
         }
         a+=(1<<n);
-        for(int i=n/2;i<n;i++){
+        for(int 
+            i=n/2;i<n;i++){
             b+=(1<<i);
         }
         cout<<a-b<<endl;
