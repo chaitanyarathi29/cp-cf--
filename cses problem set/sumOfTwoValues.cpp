@@ -40,9 +40,9 @@ int main(){
             break;
         }
     }
-    for(int i = 0; i < n; i++){
-        if(v1[i] == v[e] && i + 1 != idx1){
-            idx2 = i + 1;
+    for(int i=0;i<n;i++){
+        if(v1[i]==v[e] && i+1!=idx1){
+            idx2=i+1;
             break;
         }
     }
