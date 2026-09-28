@@ -1,50 +1,48 @@
 #include <iostream>
-#include <algorithm> 
 #include <vector>
+#include <algorithm>
+using ll = long long;
 using namespace std;
 
 int main(){
 
-    int n;
-    cin >>n;
-    vector<long long> arr(n);
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
+    int n;cin>>n;
+    vector<ll>vec(n,0);
+    for(auto&it:vec){
+        cin>>it;
     }
-    vector<long long> prefix(n);
-    long long pre=0;
-    for(int i=0; i<n; i++){
-        pre += arr[i];
-        prefix[i] = pre;
-    }
-    vector<long long> sorted = arr;
+    vector<ll>sorted = vec;
     sort(sorted.begin(),sorted.end());
-    vector<long long> prefix1(n);
-    long long pre1=0;
-    for(int i=0; i<n; i++){
-        pre1 += sorted[i];
-        prefix1[i] = pre1;
+    vector<ll>vec1(n,0);
+    vec1[0]=vec[0];
+    vector<ll>vec2(n,0);
+    vec2[0]=sorted[0];
+
+    for(int i=1;i<n;i++){
+        vec1[i]=vec[i]+vec1[i-1];
     }
-    int t;
-    cin >> t;
-    while(t--){
-        int type, left, right;
-        cin >> type >> left >> right;
-        long long ans = 0;
-        if(type == 1){
-            if(left==1){
-                ans = prefix[right-1];
+    for(int i=1;i<n;i++){
+        vec2[i]=sorted[i]+vec2[i-1];
+    }
+    int m;cin>>m;
+    while(m--){
+        int t,l,r;
+        cin>>t>>l>>r;
+        if(t==1){
+            if(l==1){
+                cout<<vec1[r-1]<<endl;
             }else{
-                ans = prefix[right-1] - prefix[left-2];
-            } 
-        }else{    
-            if(left==1){
-                ans = prefix1[right-1];
+                cout<<vec1[r-1]-vec1[l-2]<<endl;
+            }
+        }else{
+            if(l==1){
+                cout<<vec2[r-1]<<endl;
             }else{
-                ans = prefix1[right-1] - prefix1[left-2];
+                cout<<vec2[r-1]-vec2[l-2]<<endl;
             }
         }
-        cout << ans << endl;
     }
+
+    
     return 0;
 }
